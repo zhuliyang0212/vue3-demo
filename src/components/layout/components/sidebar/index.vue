@@ -2,7 +2,7 @@
   <el-scrollbar class="sidebar">
     <div>LOGO</div>
     <el-menu :collapse="isCollapse" class="z-menu">
-      <!-- <sidebarItem v-for="route in routes" :key="route.path" :route="route" /> -->
+      <!-- <sidebarItem v-for="route in routes" :key="route.path" :route="route" /> 这是dev分支-->
       <div v-for="route in routes" :key="route.path">
         <el-sub-menu
           v-if="route.children && route.children.length"
