@@ -16,7 +16,7 @@
     </template>
   </el-sub-menu>
   <template v-else>
-    <el-menu-item :index="route.path">
+    <el-menu-item :index="route.path" @click="menuClick(route.path)">
       <template v-if="route.name" #title>
         {{ route.name }}
       </template>
@@ -26,12 +26,15 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-// type route = {
-//   path: string;
-//   name: string;
-//   children?: route[];
-// };
+let router = useRouter();
+
+interface route {
+  path: string;
+  name: string;
+  children?: route[];
+}
 
 let props = defineProps({
   route: {
@@ -39,5 +42,9 @@ let props = defineProps({
     required: true,
   },
 });
+
+const menuClick = (path: string) => {
+  router.push(path);
+};
 </script>
 <style lang="scss" scoped></style>

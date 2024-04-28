@@ -26,11 +26,6 @@ import sidebar from "./components/sidebar/index.vue";
   height: 100%;
   display: flex;
 
-  .logo {
-    width: 100px;
-    height: 50px;
-  }
-
   .sidebar {
     width: 210px;
     height: 100%;
