@@ -1,9 +1,11 @@
-import request from "@/utils/service/service";
+import service from "@/utils/service/service";
 
-export const reqGet = (url: string, params: Object = {}) => {
-  return request({
-    url,
-    method: "GET",
-    data: params,
-  });
+export default {
+  // 获取路由
+  getRoutes: () => {
+    return service({
+      method: "get",
+      url: "/api/getRoutes",
+    });
+  },
 };

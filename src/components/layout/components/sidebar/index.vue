@@ -11,7 +11,7 @@
 import { ref } from "vue";
 import sidebarItem from "./sidebarItem.vue";
 import { menuList } from "@/store/menus";
-import { reqGet } from "@/api/common";
+import request from "@/api/common";
 
 let routes = menuList().menus;
 
@@ -20,7 +20,7 @@ let isCollapse = ref(false);
 console.log(routes, "routes");
 
 const getRoutes = () => {
-  reqGet("/api/getRoutes").then((res) => {
+  request.getRoutes().then((res: any) => {
     console.log(res, "getRoutes");
   });
 };
